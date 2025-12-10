@@ -30,6 +30,106 @@
             color: var(--dark);
             line-height: 1.6;
         }
+
+        /* Banner */
+        .main-banner {
+            width: 100%;
+            background-color: var(--primary);
+            margin-bottom: 30px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .banner-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .banner-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+        
+        .banner-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to right, rgba(0, 82, 155, 0.9), rgba(0, 82, 155, 0.7));
+            display: flex;
+            align-items: center;
+            padding: 0 40px;
+        }
+        
+        .banner-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            color: white;
+            width: 100%;
+        }
+        
+        .banner-content h1 {
+            font-size: 36px;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+        
+        .banner-content h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            font-weight: 400;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+        }
+        
+        .banner-tag {
+            display: inline-block;
+            background-color: var(--secondary);
+            color: var(--dark);
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+        
+        .banner-btn {
+            display: inline-block;
+            background-color: white;
+            color: var(--primary);
+            text-decoration: none;
+            padding: 12px 30px;
+            border-radius: 4px;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: 2px solid white;
+        }
+        
+        .banner-btn:hover {
+            background-color: var(--secondary);
+            color: var(--dark);
+            border-color: var(--secondary);
+        }
+        
+        /* Fallback caso a imagem não carregue */
+        .banner-fallback {
+            display: none;
+            background: linear-gradient(135deg, var(--primary), #003d75);
+            width: 100%;
+            height: 100%;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
         
         /* Header e navegação */
         header {
@@ -210,10 +310,47 @@
             border-radius: 4px;
             font-weight: 500;
             transition: background-color 0.3s;
+            text-align: center;
+            width: 100%;
+            margin-top: 10px;
         }
         
         .service-btn:hover {
             background-color: #003d75;
+        }
+        
+        /* Estilo específico para o card de suporte */
+        .support-info {
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid var(--light-gray);
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+            padding: 8px 0;
+        }
+        
+        .contact-item i {
+            width: 30px;
+            font-size: 18px;
+            color: var(--primary);
+        }
+        
+        .contact-item.whatsapp i {
+            color: #25D366;
+        }
+        
+        .contact-item.email i {
+            color: var(--primary);
+        }
+        
+        .contact-text {
+            flex: 1;
+            font-size: 14px;
+            line-height: 1.4;
         }
         
         /* Avisos e alertas */
@@ -350,6 +487,17 @@
             font-weight: 600;
             margin-left: 10px;
         }
+        
+        /* Links em alertas */
+        .alert a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+        }
+        
+        .alert a:hover {
+            text-decoration: underline;
+        }
     </style>
 </head>
 <body>
@@ -357,12 +505,13 @@
     <div class="top-bar">
         <div class="top-bar-content">
             <div class="contact-info">
-                <i class="fas fa-phone-alt"></i> (98) 3212-8000 | <i class="fas fa-envelope"></i> ouvidoria@saoluis.ma.gov.br
+                <i class="fas fa-phone-alt"></i> (98) 9 9156-0673 | <i class="fas fa-envelope"></i> ouvidoria@saoluis.ma.gov.br
             </div>
             <div class="top-bar-links">
-                <a href="#"><i class="fas fa-user"></i> Área do Contribuinte</a>
-                <a href="#"><i class="fas fa-question-circle"></i> Ajuda</a>
-                <a href="#"><i class="fas fa-sitemap"></i> Mapa do Site</a>
+                <a href="https://stm.semfaz.saoluis.ma.gov.br/sistematributario"><i class="fas fa-bank" target="_blank"></i> Portal SEMFAZ</a>
+                <a href="https://stm.semfaz.saoluis.ma.gov.br/sistematributario/jsp/login/login.jsf"><i class="fas fa-user" target="_blank"></i> Área do Contribuinte</a>
+                <a href="#"><i class="fas fa-question-circle" ></i> Ajuda</a>
+                
             </div>
         </div>
     </div>
@@ -378,17 +527,21 @@
                 </div>
             </div>
             
-            <nav class="nav-menu">
-                <ul>
-                    <li><a href="#" class="active">NFS-e</a></li>
-                    <li><a href="#">Notas Emitidas</a></li>
-                    <li><a href="#">Legislação</a></li>
-                    <li><a href="#">Serviços</a></li>
-                    <li><a href="#">Contato</a></li>
-                </ul>
-            </nav>
+            
         </div>
     </header>
+
+    <!-- Banner Principal -->
+    <section class="main-banner">
+        <div class="banner-container">
+            <!-- Imagem do banner (use sua imagem banner_site001.png) -->
+            <img src="bannernfs.png" alt="NFS-e 2026 - Nota Fiscal de Serviços Eletrônicos" class="banner-image" onerror="this.style.display='none'; document.querySelector('.banner-fallback').style.display='flex';">
+            
+            
+            
+            
+        </div>
+    </section>
     
     <!-- Conteúdo Principal -->
     <main class="container">
@@ -400,18 +553,43 @@
         <!-- Seção de Avisos -->
         <section class="alerts-section">
             <div class="alert">
-                <i class="fas fa-exclamation-triangle"></i>
+                <i class="fas fa-question-circle"></i>
                 <div>
-                    <h3>Manutenção Programada</h3>
-                    <p>O sistema de NFS-e ficará indisponível no dia <span class="highlight">15/10/2026</span>, das <span class="highlight">22h às 02h</span>, para atualizações de segurança.</p>
+                    <h3>Por que a mudança?</h3>
+                    <p>A transição para a Nota Fiscal Eletrônica Nacional é uma iniciativa fundamental impulsionada pela Reforma Tributária do Consumo no Brasil, buscando modernizar e simplificar as obrigações fiscais. 
+                    Lei Complementar n° 214/2025 | Emenda Constitucional m° 132/2023 | Decreto n° 62.046/2025</p>
                 </div>
             </div>
             
             <div class="alert alert-success">
                 <i class="fas fa-check-circle"></i>
                 <div>
-                    <h3>Novo Prazo para Adaptação</h3>
-                    <p>O prazo para adaptação à NFS-e 2026 foi estendido até <span class="highlight">31/12/2026</span>. Confira as novas regras no portal da SEFAZ.</p>
+                    <h3>Unificação Nacional</h3>
+                    <p>O padrão nacional visa unificar layouts, reduzir a complexidade e preparar o ambiente para a apuração da CBS e do IBS.</p>
+                </div>
+            </div>
+
+            <div class="alert alert-success">
+                <i class="fas fa-check-circle"></i>
+                <div>
+                    <h3>Redução da Burocracia</h3>
+                    <p>Compartilhamento de dados por meio de documentos fiscais eletrônicos e adoção do ambiente nacional por todos os municípios.</p>
+                </div>
+            </div>
+
+            <div class="alert alert-success">
+                <i class="fas fa-check-circle"></i>
+                <div>
+                    <h3>Alteração Municipal</h3>
+                    <p>Através da Instrução Normativa nº 5/2025, a Secretaria Municipal da Fazenda estabeleceu a emissão das Notas Fiscais de Serviço Eletrônicas – NFS-e no padrão nacional.</p>
+                </div>
+            </div>
+
+            <div class="alert alert-success">
+                <i class="fas fa-check-circle"></i>
+                <div>
+                    <h3>O que isso significa?</h3>
+                    <p>As Notas Fiscais de Serviço Eletrônica serão emitidas no portal da Semfaz. RPS (atual DPS) serão emitidas exclusivamente no portal nacional <a href="https://www.nfse.gov.br/EmissorNacional" target="_blank">www.nfse.gov.br/EmissorNacional</a>.</p>
                 </div>
             </div>
         </section>
@@ -428,21 +606,36 @@
                 </div>
                 <div class="service-content">
                     <p>Emita sua Nota Fiscal de Serviços Eletrônica de forma rápida e segura. Sistema atualizado conforme legislação municipal vigente.</p>
-                    <a href="#" class="service-btn">Acessar Emissor</a>
+                    <a href="https://stm.semfaz.saoluis.ma.gov.br/sistematributario/jsp/login/login.jsf" class="service-btn" target="_blank">Acessar Emissor</a>
                 </div>
             </div>
             
-            <!-- Consulta e Gestão -->
+            <!-- Orientações e Suporte -->
             <div class="service-card">
                 <div class="service-header">
                     <div class="service-icon">
                         <i class="fas fa-search"></i>
                     </div>
-                    <h3>Consulta e Gestão</h3>
+                    <h3>Orientações e Suporte</h3>
                 </div>
                 <div class="service-content">
-                    <p>Consulte notas fiscais emitidas, gere relatórios gerenciais e faça a gestão completa das suas notas de serviço.</p>
-                    <a href="#" class="service-btn">Consultar Notas</a>
+                    <p>Guia de orientações da Nota Fiscal Eletrônica Nacional</p>
+                    ㅤ
+                    <a href="https://www.gov.br/nfse/pt-br/biblioteca/documentacao-tecnica" class="service-btn" target="_blank">Documentação Técnica</a>
+                </div>
+            </div>
+
+             <!-- EMISSOR RPS | DPS -->
+            <div class="service-card">
+                <div class="service-header">
+                    <div class="service-icon">
+                        <i class="fas fa-bank"></i>
+                    </div>
+                    <h3>Emissor RPS | DPS</h3>
+                </div>
+                <div class="service-content">
+                    <p>Atenção contribuinte emissor de RPS, atualmente denominado DPS, a emissão de NFSe é exclusivamente pelo portal nacional.</p>
+                    <a href="https://www.gov.br/nfse/pt-br/biblioteca/documentacao-tecnica" class="service-btn" target="_blank">Emitir RPS | DPS</a>
                 </div>
             </div>
             
@@ -455,8 +648,9 @@
                     <h3>Credenciamento</h3>
                 </div>
                 <div class="service-content">
-                    <p>Faça seu credenciamento como prestador de serviços no município de São Luís e obtenha seu certificado digital.</p>
-                    <a href="#" class="service-btn">Credenciar-se</a>
+                    <p> Faça seu credenciamento como prestador de serviços do município de São Luís.</p>
+                    ㅤ
+                    <a href="https://stm.semfaz.saoluis.ma.gov.br/portalPrefeitura/jsp/nota/credenciamento.jsf" class="service-btn" target="_blank">Credenciar-se</a>
                 </div>
             </div>
             
@@ -470,7 +664,21 @@
                 </div>
                 <div class="service-content">
                     <p>Tire suas dúvidas sobre a NFS-e 2026, prazos, valores, isenções e procedimentos necessários para emissão.</p>
-                    <a href="#" class="service-btn">Ver FAQ</a>
+                    <a href="#" class="service-btn" target="_blank">Ver FAQ</a>
+                </div>
+            </div>
+
+            <!-- Parametrização da DPS -->
+            <div class="service-card">
+                <div class="service-header">
+                    <div class="service-icon">
+                        <i class="fas fa-gear"></i>
+                    </div>
+                    <h3>Parametrização da DPS</h3>
+                </div>
+                <div class="service-content">
+                    <p>Layout e informações detalhadas sobre a Declaração de Prestação de Serviços (DPS). Atenção contribuinte emissor de RPS, atualmente denominado DPS, a emissão de NFSe é exclusivamente pelo portal nacional.</p>
+                    <a href="https://www.gov.br/nfse/pt-br/biblioteca/documentacao-tecnica" class="service-btn" target="_blank">Ver Parametrização da DPS</a>
                 </div>
             </div>
             
@@ -484,7 +692,10 @@
                 </div>
                 <div class="service-content">
                     <p>Acesse a legislação municipal referente à emissão de Notas Fiscais de Serviços Eletrônicas.</p>
-                    <a href="#" class="service-btn">Consultar Legislação</a>
+                    <a href="https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp214.htm" class="service-btn" target="_blank">Lei Completmentar n° 214/2025</a>
+                    <a href="https://www.planalto.gov.br/ccivil_03/constituicao/emendas/emc/emc132.htm " class="service-btn" target="_blank">Emenda Constitucional 132/2023</a>
+                    <a href="https://www.saoluis.ma.gov.br/arquivos/decreto_n_62046_10022432.pdf" class="service-btn" target="_blank">Decreto Municipal n°62046</a>
+                    <a href="https://www.saoluis.ma.gov.br/arquivos/sei_2832823_instrucao_normativa_5_10022430.pdf" class="service-btn" target="_blank">Instrução Normativa</a>
                 </div>
             </div>
             
@@ -498,7 +709,10 @@
                 </div>
                 <div class="service-content">
                     <p>Precisa de ajuda? Entre em contato com nossa equipe de suporte para esclarecer suas dúvidas.</p>
-                    <a href="#" class="service-btn">Falar com Suporte</a>
+                                       
+                    
+                    <a href="https://wa.me/98991209539" class="service-btn"><i class="fab fa-whatsapp" target="_blank"></i> Falar com Suporte via WhatsApp</a>
+                    <a href="mailto:cime@semfaz.saoluis.ma.gov.br?subject=&body=" class="service-btn"><i class="fas fa-envelope" target="_blank"></i> Falar com Suporte via email</a>
                 </div>
             </div>
         </section>
@@ -511,45 +725,40 @@
                 <h4>Secretaria Municipal da Fazenda</h4>
                 <p>R. do Egito, 283 - Centro<br>
                 São Luís - MA, CEP: 65010-190</p>
-                <p><strong>Telefone:</strong> (98) 9 9156-0673</p>
+                <p><strong>Telefone:</strong> (98) 9 9120-9539</p>
                 <p><strong>E-mail:</strong> infosemfaz@semfaz.saoluis.ma.gov.br</p>
             </div>
             
             <div class="footer-column">
                 <h4>Links Rápidos</h4>
                 <ul>
-                    <li><a href="#">Portal da Transparência</a></li>
-                    <li><a href="#">Diário Oficial do Município</a></li>
-                    <li><a href="#">Consulta de Processos</a></li>
-                    <li><a href="#">Calendário Tributário</a></li>
-                    <li><a href="#">Simuladores</a></li>
+                    <li><a href="https://www.saoluis.ma.gov.br/portal/transparencia" target="_blank">Portal da Transparência</a></li>
+                    <li><a href="https://diariooficial.saoluis.ma.gov.br/" target="_blank">Diário Oficial do Município</a></li>
+                    <li><a href="https://sei.saoluis.ma.gov.br/sei/controlador_externo.php?acao=usuario_externo_logar&id_orgao_acesso_externo=0" target="_blank">Consulta de Processos</a></li>
+                    
                 </ul>
             </div>
             
             <div class="footer-column">
                 <h4>Serviços ao Cidadão</h4>
                 <ul>
-                    <li><a href="#">IPTU 2026</a></li>
-                    <li><a href="#">ISS 2026</a></li>
-                    <li><a href="#">Alvarás e Licenças</a></li>
-                    <li><a href="#">Notificações e Multas</a></li>
-                    <li><a href="#">Certidões Negativas</a></li>
+                    <li><a href="https://www.semfaz.saoluis.ma.gov.br/conteudo?/45/15/IMPOSTO%20PREDIAL%20E%20TERRITORIAL%20URBANO%20%20IPTU" target="_blank">IPTU 2026</a></li>
+                    <li><a href=" https://www.semfaz.saoluis.ma.gov.br/conteudo?/6/16/ISS" target="_blank">ISS</a></li>
+                    <li><a href="https://www.semfaz.saoluis.ma.gov.br/conteudo?/7/23/Alvar%C3%A1" target="_blank">Alvarás e Licenças</a></li>
+                    <li><a href="https://www.semfaz.saoluis.ma.gov.br/conteudo?/9/29/Certid%C3%B5es" target="_blank">Certidões Negativas</a></li>
                 </ul>
             </div>
             
             <div class="footer-column">
                 <h4>Redes Sociais</h4>
                 <ul>
-                    <li><a href="#"><i class="fab fa-facebook-f"></i> Facebook</a></li>
-                    <li><a href="#"><i class="fab fa-instagram"></i> Instagram</a></li>
-                    <li><a href="#"><i class="fab fa-twitter"></i> Twitter</a></li>
-                    <li><a href="#"><i class="fab fa-youtube"></i> YouTube</a></li>
+                    <li><a href="https://www.instagram.com/semfaz.saoluis?igsh=ODRrbHZpa2RweWNy"><i class="fab fa-instagram" target="_blank"></i> Instagram</a></li>
                 </ul>
             </div>
         </div>
         
         <div class="footer-bottom">
-            <p>&copy; 2026 Prefeitura Municipal de São Luís - MA. Todos os direitos reservados.</p>
+            <p>&copy; 2025 Prefeitura Municipal de São Luís - MA. Todos os direitos reservados.</p>
             <p>Desenvolvido pela Secretaria Municipal de Informação e Tecnologia  - SEMIT</p>
         </div>
     </footer>
@@ -570,22 +779,49 @@
                 });
             });
             
-            // Simula um login ao clicar no botão de Área do Contribuinte
-            const contribuinteBtn = document.querySelector('.top-bar-links a[href="#"]');
-            contribuinteBtn.addEventListener('click', function(e) {
-                e.preventDefault();
-                alert('Redirecionando para a Área do Contribuinte...\n\nEm uma implementação real, aqui seria a página de login.');
-            });
-            
             // Adiciona funcionalidade aos botões de serviço
             const serviceBtns = document.querySelectorAll('.service-btn');
             serviceBtns.forEach(btn => {
                 btn.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    const serviceName = this.closest('.service-card').querySelector('h3').textContent;
-                    alert(`Acessando: ${serviceName}\n\nEm uma implementação real, você seria redirecionado para o serviço específico.`);
+                    // Não mais previne o comportamento padrão para links reais
+                    const href = this.getAttribute('href');
+                    if (href === '#' || href === '') {
+                        e.preventDefault();
+                        const serviceName = this.closest('.service-card').querySelector('h3').textContent;
+                        alert(`Acessando: ${serviceName}\n\nEm uma implementação real, você seria redirecionado para o serviço específico.`);
+                    }
+                    // Links com URL real seguirão normalmente
                 });
             });
+            
+            // Adiciona funcionalidade para abrir WhatsApp
+            const whatsappItem = document.querySelector('.contact-item.whatsapp');
+            if (whatsappItem) {
+                whatsappItem.addEventListener('click', function() {
+                    const phoneNumber = '98991209539';
+                    const message = 'Olá, preciso de suporte sobre a NFS-e 2026 da Prefeitura de São Luís.';
+                    const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+                    window.open(whatsappURL, '_blank');
+                });
+                
+                // Adiciona cursor pointer para indicar que é clicável
+                whatsappItem.style.cursor = 'pointer';
+            }
+            
+            // Adiciona funcionalidade para abrir e-mail
+            const emailItem = document.querySelector('.contact-item.email');
+            if (emailItem) {
+                emailItem.addEventListener('click', function() {
+                    const email = 'cime@semfaz.saoluis.ma.gov.br';
+                    const subject = 'Suporte NFS-e 2026 - Prefeitura de São Luís';
+                    const body = 'Prezados,\n\nGostaria de solicitar suporte sobre:';
+                    const mailtoURL = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+                    window.location.href = mailtoURL;
+                });
+                
+                // Adiciona cursor pointer para indicar que é clicável
+                emailItem.style.cursor = 'pointer';
+            }
         });
     </script>
 </body>
