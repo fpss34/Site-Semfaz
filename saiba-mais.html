@@ -25,6 +25,7 @@
             background-color: var(--light);
             color: var(--dark);
             line-height: 1.6;
+            overflow-x: hidden;
         }
         
         .container {
@@ -190,9 +191,19 @@
             color: white;
             padding: 30px 0;
             margin-top: 50px;
+            width: 100%;
             text-align: center;
         }
         
+        .footer .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* ============ RESPONSIVIDADE ============ */
+        
+        /* Tablets */
         @media (max-width: 768px) {
             .header-content {
                 flex-direction: column;
@@ -200,8 +211,154 @@
                 text-align: center;
             }
             
+            .logo-container {
+                flex-direction: column;
+            }
+            
+            .logo {
+                height: 50px;
+            }
+            
+            .logo-text h1 {
+                font-size: 18px;
+            }
+            
+            .logo-text p {
+                font-size: 12px;
+            }
+            
+            .back-btn {
+                width: 100%;
+                justify-content: center;
+            }
+            
+            .page-title {
+                padding: 20px;
+            }
+            
+            .page-title h1 {
+                font-size: 24px;
+            }
+            
+            .content-section {
+                padding: 20px;
+            }
+            
+            .section-title {
+                font-size: 20px;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 5px;
+            }
+            
             .info-grid {
                 grid-template-columns: 1fr;
+            }
+            
+            .highlight-box {
+                padding: 15px;
+            }
+        }
+        
+        /* Mobile phones */
+        @media (max-width: 480px) {
+            .container {
+                padding: 15px;
+            }
+            
+            .header {
+                padding: 15px 0;
+            }
+            
+            .header-content {
+                padding: 0 15px;
+            }
+            
+            .logo {
+                height: 45px;
+            }
+            
+            .back-btn {
+                padding: 8px 16px;
+                font-size: 14px;
+            }
+            
+            .page-title {
+                padding: 15px;
+                margin-bottom: 20px;
+            }
+            
+            .page-title h1 {
+                font-size: 22px;
+            }
+            
+            .page-title p {
+                font-size: 14px;
+            }
+            
+            .content-section {
+                padding: 15px;
+                margin-bottom: 20px;
+            }
+            
+            .section-title {
+                font-size: 18px;
+            }
+            
+            .content-section p {
+                font-size: 14px;
+            }
+            
+            .content-section ul {
+                margin-left: 15px;
+            }
+            
+            .info-item {
+                padding: 12px;
+            }
+            
+            .info-item h5 {
+                font-size: 16px;
+            }
+            
+            .link-list li {
+                margin-bottom: 8px;
+            }
+            
+            .link-list a {
+                font-size: 14px;
+            }
+            
+            .footer {
+                padding: 20px 0;
+                margin-top: 30px;
+            }
+            
+            .footer .container p {
+                font-size: 12px;
+            }
+        }
+        
+        /* Very small phones */
+        @media (max-width: 375px) {
+            .logo-text h1 {
+                font-size: 16px;
+            }
+            
+            .page-title h1 {
+                font-size: 20px;
+            }
+            
+            .section-title {
+                font-size: 16px;
+            }
+            
+            .highlight-box {
+                padding: 12px;
+            }
+            
+            .highlight-box h4 {
+                font-size: 16px;
             }
         }
     </style>
