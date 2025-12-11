@@ -46,7 +46,6 @@
             max-width: 1200px;
             margin: 0 auto;
             position: relative;
-            height: 300px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -55,6 +54,7 @@
         .banner-image {
             width: 100%;
             height: auto;
+            max-height: 300px;
             object-fit: contain;
             display: block;
         }
@@ -131,6 +131,96 @@
             color: white;
             text-align: center;
             padding: 20px;
+        }
+
+        /* MEDIA QUERIES PARA RESPONSIVIDADE DO BANNER */
+        @media (max-width: 1024px) {
+                .banner-image {
+                max-height: 250px;
+            }
+    
+                .banner-content h1 {
+                font-size: 32px;
+            }
+    
+                .banner-content h2 {
+                font-size: 22px;
+            }
+        }
+
+            @media (max-width: 768px) {
+                .banner-image {
+                max-height: 200px;
+            }
+    
+                .banner-overlay {
+                padding: 0 20px;
+            }
+    
+                .banner-content h1 {
+                font-size: 28px;
+            }
+    
+                .banner-content h2 {
+                font-size: 20px;
+            }
+    
+                .banner-btn {
+                padding: 10px 25px;
+                font-size: 14px;
+            }
+        }
+
+            @media (max-width: 576px) {
+                .banner-image {
+                max-height: 180px;
+            }
+    
+                .banner-content {
+                text-align: center;
+            }
+    
+                .banner-content h1 {
+                font-size: 24px;
+            }
+    
+                .banner-content h2 {
+                font-size: 18px;
+            }
+    
+               .banner-tag {
+                font-size: 12px;
+                padding: 6px 15px;
+            }
+        }
+
+            @media (max-width: 480px) {
+                .banner-image {
+                max-height: 150px;
+            }
+    
+                .banner-fallback {
+                min-height: 150px;
+                padding: 15px;
+            }
+    
+                .banner-content h1 {
+                font-size: 22px;
+            }
+        }
+
+            @media (max-width: 375px) {
+                .banner-image {
+                max-height: 130px;
+            }
+    
+                .banner-content h1 {
+                font-size: 20px;
+            }
+    
+                .banner-content h2 {
+                font-size: 16px;
+            }
         }
         
         /* Header e navegação */
