@@ -54,8 +54,8 @@
         
         .banner-image {
             width: 100%;
-            height: 100%;
-            object-fit: cover;
+            height: auto;
+            object-fit: contain;
             display: block;
         }
         
@@ -444,7 +444,44 @@
             color: #aaa;
             font-size: 14px;
         }
+
+            
         
+        /* Responsividade da Top Bar */
+        @media (max-width: 768px) {
+            .top-bar{
+                padding: 10px 0;
+            }
+            
+            .top-bar-content{
+                flex-direction: column;
+                gap: 10px;
+                align-items: center;
+            }
+
+            .top-bar-links {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 15px;
+                width: 100%;
+            }
+            
+            .top-bar-links a{
+                margin: 0;
+                padding: 8px 12px;
+                background-color: rgba(255, 255, 255, 0.1);
+                border-radius: 4px;
+                font-size: 13px;
+                display: flex;
+                align-items: center;
+                gap: 5px;
+                white-space: nowrap;
+            }
+
+           
+        }
+
         /* Responsividade */
         @media (max-width: 768px) {
             .top-bar-content {
@@ -470,6 +507,38 @@
             
             .services-grid {
                 grid-template-columns: 1fr;
+            }
+
+            /* Banner no Mobile */
+            .banner-image {
+                max-height: 250px; /* Menor altura no tablet */
+            }
+            
+            .banner-fallback {
+                height: 200px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            /* Banner no Celular */
+            .banner-image {
+                max-height: 180px; /* Menor altura no celular */
+            }
+            
+            .banner-fallback {
+                height: 150px;
+            }
+        }
+        
+        @media (max-width: 320px) {
+            /* Banner em telas muito pequenas */
+            .banner-image {
+                max-height: 150px;
+            }
+            
+            .banner-fallback {
+                height: 120px;
+                padding: 10px;
             }
         }
         
@@ -507,12 +576,12 @@
     <div class="top-bar">
         <div class="top-bar-content">
             <div class="contact-info">
-                <i class="fas fa-phone-alt"></i> (98) 9 9156-0673 | <i class="fas fa-envelope"></i> ouvidoria@saoluis.ma.gov.br
+                <i class="fas fa-phone-alt"></i> (98) 9 9120-9539 | <i class="fas fa-envelope"></i> infosemfaz@semfaz.saoluis.ma.gov.br
             </div>
             <div class="top-bar-links">
-                <a href="https://stm.semfaz.saoluis.ma.gov.br/sistematributario"><i class="fas fa-bank" target="_blank"></i> Portal SEMFAZ</a>
-                <a href="https://stm.semfaz.saoluis.ma.gov.br/sistematributario/jsp/login/login.jsf"><i class="fas fa-user" target="_blank"></i> Área do Contribuinte</a>
-                <a href="#"><i class="fas fa-question-circle" ></i> Ajuda</a>
+                <a href="https://stm.semfaz.saoluis.ma.gov.br/sistematributario" target="_blank"><i class="fas fa-bank" ></i> Portal SEMFAZ</a>
+                <a href="https://stm.semfaz.saoluis.ma.gov.br/sistematributario/jsp/login/login.jsf" target="_blank"><i class="fas fa-user" ></i> Área do Contribuinte</a>
+                <a href="#" target="_blank"><i class="fas fa-question-circle" ></i> Ajuda</a>
                 
             </div>
         </div>
@@ -713,8 +782,8 @@
                     <p>Precisa de ajuda? Entre em contato com nossa equipe de suporte para esclarecer suas dúvidas.</p>
                                        
                     
-                    <a href="https://wa.me/98991209539" class="service-btn"><i class="fab fa-whatsapp" target="_blank"></i> Falar com Suporte via WhatsApp</a>
-                    <a href="mailto:cime@semfaz.saoluis.ma.gov.br?subject=&body=" class="service-btn"><i class="fas fa-envelope" target="_blank"></i> Falar com Suporte via email</a>
+                    <a href="https://wa.me/98991209539" class="service-btn" target="_blank"><i class="fab fa-whatsapp"></i> Falar com Suporte via WhatsApp</a>
+                    <a href="mailto:cime@semfaz.saoluis.ma.gov.br?subject=&body=" class="service-btn" target="_blank"><i class="fas fa-envelope"></i> Falar com Suporte via email</a>
                 </div>
             </div>
         </section>
@@ -736,7 +805,7 @@
                 <ul>
                     <li><a href="https://www.saoluis.ma.gov.br/portal/transparencia" target="_blank">Portal da Transparência</a></li>
                     <li><a href="https://diariooficial.saoluis.ma.gov.br/" target="_blank">Diário Oficial do Município</a></li>
-                    <li><a href="https://sei.saoluis.ma.gov.br/sei/controlador_externo.php?acao=usuario_externo_logar&id_orgao_acesso_externo=0" target="_blank">Consulta de Processos</a></li>
+                    <li><a href="https://sei.saoluis.ma.gov.br/sei/modulos/pesquisa/md_pesq_processo_pesquisar.php?acao_externa=protocolo_pesquisar&acao_origem_externa=protocolo_pesquisar&infra_item_menu=2&id_orgao_acesso_externo=0&infra_hash=2135a2984003a201387383d23c4dab9c" target="_blank">Consulta de Processos</a></li>
                     
                 </ul>
             </div>
