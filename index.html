@@ -671,7 +671,7 @@
             <div class="top-bar-links">
                 <a href="https://stm.semfaz.saoluis.ma.gov.br/sistematributario" target="_blank"><i class="fas fa-bank" ></i> Portal SEMFAZ</a>
                 <a href="https://stm.semfaz.saoluis.ma.gov.br/sistematributario/jsp/login/login.jsf" target="_blank"><i class="fas fa-user" ></i> Área do Contribuinte</a>
-                <a href="#" target="_blank"><i class="fas fa-question-circle" ></i> Ajuda</a>
+                <!-- <a href="#" target="_blank"><i class="fas fa-question-circle" ></i> Ajuda</a> -->
                 
             </div>
         </div>
@@ -949,7 +949,7 @@
                     if (href === '#' || href === '') {
                         e.preventDefault();
                         const serviceName = this.closest('.service-card').querySelector('h3').textContent;
-                        alert(`Acessando: ${serviceName}\n\nEm uma implementação real, você seria redirecionado para o serviço específico.`);
+                        alert(`Acessando: ${serviceName}\n\nNenhum Serviço Vinculado no Momento.`);
                     }
                     // Links com URL real seguirão normalmente
                 });
